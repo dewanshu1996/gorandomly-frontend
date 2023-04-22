@@ -1,0 +1,103 @@
+.container{
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+
+.paper{
+    position: absolute;
+    height:15%;
+    width: 7%;
+    background-color: white;
+    border: 2px solid lightgray;
+    border-radius: 2px;;
+    box-shadow: 5px 5px 10px lightgray;
+    animation: mymove 1.5s infinite;
+    text-align: center;
+    font-size: large;
+    color: green;
+}
+
+.bowl {
+  position: absolute;
+  width: 8rem;
+  height: 3rem;
+  left: 35%;
+  top:45%;
+  background: #f3f3f3;
+  border-radius: .2rem .2rem 3rem  3rem;
+  border-bottom: 0.3rem solid #ccc;
+}
+
+.bowl::after {
+  content: '';
+  background:GREEN;
+  display: block;
+  position: absolute;
+  width: inherit;
+  height: 0.3rem;
+  top: 0.2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  /* tablets and desktop */
+  .container{
+    width: 100%;
+  }
+
+  .paper{
+    width: 30%;
+    left: 35%;
+  }
+
+  .bowl{
+    left:35%;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1023px) {
+  /* phones */
+  .container{
+    width: 100%;
+  }
+
+  .paper{
+    width: 30%;
+    left: 35%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  /* portrait phones */
+  .container{
+    width: 50%;
+    margin: auto;
+  }
+
+  .paper{
+    width: 15%; 
+     left: 40%;
+  }
+
+
+}
+
+@keyframes mymove {
+    100% {
+        transform: translate(0, 0)  rotate(0deg) scale(1) ;
+      }
+      /* 25% {
+        transform: translate( 0 , 50%) rotate(0deg) scale(0.9) ;
+      } */
+      50% {
+        transform: translate(0 , 100%)  rotate(0deg) scale(0.8) ;
+      }
+      /* 75% { 
+        transform: translate(0 , 150%)  rotate(0deg) scale(0.7) ;
+      } */
+      0% {
+        transform: translate(0 ,230%)  rotate(360deg) scale(0.5) ;
+      }
+  }
