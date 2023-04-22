@@ -1,10 +1,8 @@
 import Result from "@/components/result";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import io from "Socket.IO-client";
-import CircularProgress from "@mui/material/CircularProgress";
 
-let socket;
+import CircularProgress from "@mui/material/CircularProgress";
 
 const ResultPage = () => {
   const router = useRouter();

@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { Fragment, useEffect, useState } from "react";
-import io from "Socket.IO-client";
+import io from "socket.io-client";
 import Divider from "@mui/material/Divider";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Button from "@mui/material/Button";
@@ -8,7 +8,9 @@ import PapaerDown from "../ui/paperdown";
 
 import { API_URL } from "../../env.config";
 
-let socket: any = io("http://localhost:8000");
+const socket = io(
+  `${window.location.protocol}//${window.location.hostname}:${window.location.port}`
+);
 
 const Result = (props: any) => {
   const router = useRouter();
