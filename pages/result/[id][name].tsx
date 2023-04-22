@@ -1,7 +1,6 @@
 import Result from "@/components/result";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-
 import CircularProgress from "@mui/material/CircularProgress";
 
 const ResultPage = () => {

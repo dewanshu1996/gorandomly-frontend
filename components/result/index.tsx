@@ -8,9 +8,7 @@ import PapaerDown from "../ui/paperdown";
 
 import { API_URL } from "../../env.config";
 
-const socket = io(
-  `${window.location.protocol}//${window.location.hostname}:${window.location.port}`
-);
+const socket = io("http://13.233.147.4:8000");
 
 const Result = (props: any) => {
   const router = useRouter();
