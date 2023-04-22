@@ -208,8 +208,18 @@ const Initiate = (props: any) => {
                   color: "#0e7324",
                 }}
                 onClick={() => {
-                  navigator.clipboard.writeText(apiResponseData.link);
-                  setClicket(true);
+                  try {
+                    const textarea = document.createElement("textarea");
+                    textarea.value = apiResponseData.link;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    document.execCommand("copy");
+                    console.log("Text copied to clipboard");
+                    document.body.removeChild(textarea);
+                    setClicket(true);
+                  } catch (err) {
+                    console.error("Failed to copy text: ", err);
+                  }
                 }}
               >
                 Copy Link
